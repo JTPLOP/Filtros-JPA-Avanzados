@@ -30,7 +30,7 @@ public class ProductoController {
             @RequestParam List<String> marcas,
             @RequestParam String nombre
     ) {
-        return ResponseEntity.ok(productoService.findByFilter());
+        return ResponseEntity.ok(productoService.findByFilter(marcas, nombre));
     }
 
 

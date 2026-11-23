@@ -11,20 +11,22 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ProductoService {
 
-    private final ProductRepository productRepository;s
+    private final ProductRepository productRepository;
 
     public List<Producto> findAll() {
 
-       // List<Producto> result = // meter busqueda repo
-
-       // return result;
-
-        return List.of();
+        return productRepository.findAll();
     }
 
-    public List<Producto> findByFilter() {
+    public List<Producto> findByFilter(List<String> marcas, String nombre) {
 
-        return
+
+
+
+        List<Producto> result = productRepository.findAll();
+
+
+        return result;
     }
 
 
