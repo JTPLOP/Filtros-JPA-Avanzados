@@ -1,5 +1,6 @@
 package com.salesianos.filtrosavanzadosjpa.service;
 
+import com.salesianos.filtrosavanzadosjpa.dto.ProductoFilterDTO;
 import com.salesianos.filtrosavanzadosjpa.model.Producto;
 import com.salesianos.filtrosavanzadosjpa.repository.ProductRepository;
 import jakarta.transaction.Transactional;
@@ -25,14 +26,6 @@ public class ProductoService {
         return productRepository.findAll();
     }
 
-    public List<Producto> findByFilter(List<String> marcas, String nombre) {
-
-        List<Producto> result = productRepository.findAll();
-
-        return result;
-    }
-
-
     @Transactional(readOnly = true)
     public Page<ProductoFilterDTO> buscarProductosFiltro(ProductoFilterDTO filtro, Pageable pageable) {
         // 1. Construir la especificacion de predicados
@@ -45,6 +38,8 @@ public class ProductoService {
         // Este mapeo también lo podríamos hacer en el controlador en función del fetching de las asociaciones.
         return paginaEntidades.map(this::convertirADto);
     }
+
+
 
 
 }

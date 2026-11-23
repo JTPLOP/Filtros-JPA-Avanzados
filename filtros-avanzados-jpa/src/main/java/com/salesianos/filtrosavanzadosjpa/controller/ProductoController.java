@@ -1,6 +1,7 @@
 package com.salesianos.filtrosavanzadosjpa.controller;
 
 
+import com.salesianos.filtrosavanzadosjpa.dto.ProductoFilterDTO;
 import com.salesianos.filtrosavanzadosjpa.model.Producto;
 import com.salesianos.filtrosavanzadosjpa.service.ProductoService;
 import jakarta.validation.Valid;
