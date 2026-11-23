@@ -6,9 +6,11 @@ import com.salesianos.filtrosavanzadosjpa.service.ProductoService;
 import lombok.RequiredArgsConstructor;
 
 import org.apache.coyote.Response;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.awt.print.Pageable;
 import java.util.List;
 
 @RestController
@@ -28,9 +30,10 @@ public class ProductoController {
     @GetMapping("/filter")
     public ResponseEntity<List<Producto>> getProductsByFilter (
             @RequestParam List<String> marcas,
-            @RequestParam String nombre
-    ) {
-        return ResponseEntity.ok(productoService.findByFilter(marcas, nombre));
+            @RequestParam String nombre,
+            @PageableDefault(size = 10) Pageable pageable
+            ) {
+        return ResponseEntity.ok(productoService.findByFilter(marcas, nombre,pageable));
     }
 
 
