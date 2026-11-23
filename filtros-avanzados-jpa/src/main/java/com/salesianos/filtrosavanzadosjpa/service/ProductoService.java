@@ -1,5 +1,6 @@
 package com.salesianos.filtrosavanzadosjpa.service;
 
+import model.Producto;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -10,6 +11,11 @@ public class ProductoService {
         List<Producto> result = // meter busqueda repo
 
         return result;
+    }
+
+    public List<Producto> findByFilter() {
+
+        return
     }
 
 
