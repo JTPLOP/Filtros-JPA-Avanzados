@@ -1,6 +1,7 @@
 package com.salesianos.filtrosavanzadosjpa.controller;
 
 
+import com.salesianos.filtrosavanzadosjpa.model.Producto;
 import com.salesianos.filtrosavanzadosjpa.service.ProductoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +25,7 @@ public class ProductoController {
 
     }
 
-    @GetMapping ()
+    //@GetMapping ()
 
 
 
