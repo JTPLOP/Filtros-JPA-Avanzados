@@ -15,7 +15,7 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.awt.print.Pageable;
+import java.math.BigDecimal;
 import java.util.List;
 
 @RestController
@@ -33,20 +33,15 @@ public class ProductoController {
     }
 
     @GetMapping("/filter")
-    public ResponseEntity<List<Producto>> getProductsByFilter (
+    public ResponseEntity<Page<ProductoFilterDTO>> getProductsByFilter (
             @RequestParam List<String> marcas,
             @RequestParam String nombre,
+            @RequestParam BigDecimal precio,
             @PageableDefault(size = 10) Pageable pageable
             ) {
-        return ResponseEntity.ok(productoService.findByFilter(marcas, nombre,pageable));
-    }
 
-
-    // Match con el filterDTO
-    public ResponseEntity<Page<ProductoFilterDTO>> filtrarProductos(
-            @Valid @RequestBody ProductoFilterDTO filtro,
-            @PageableDefault(size=10, sort="nombre") Pageable pageable ){
-        return ResponseEntity.ok(productoService.buscarProductosFiltro(filtro, pageable));
+        return ResponseEntity.ok(productoService.buscarProductosFiltro(new ProductoFilterDTO(
+                nombre, precio, marcas),pageable));
     }
 
 

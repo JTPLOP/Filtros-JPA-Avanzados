@@ -9,6 +9,8 @@ import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -18,11 +20,11 @@ public class ProductoFilterDTO {
     private String nombre;
 
     @DecimalMin(value = "0.0", message = "El precio mínimo no puede ser negativo")
-    private BigDecimal precioMin;
-
     @DecimalMax(value = "10000.0", message = "El precio máximo superado")
-    private BigDecimal precioMax;
+    private BigDecimal precio;
 
-    private String nombreCategoria;
+    private List<String> marca = new ArrayList<>();
 
+    public ProductoFilterDTO(String nombre, BigDecimal precio, List<String> listaMarcas) {
+    }
 }
