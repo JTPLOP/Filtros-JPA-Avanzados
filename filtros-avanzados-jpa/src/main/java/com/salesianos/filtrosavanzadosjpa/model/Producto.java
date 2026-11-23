@@ -23,6 +23,8 @@ public class Producto {
 
     private String nombre;
 
+    private BigDecimal precio;
+
     @Builder.Default
     private List<String> listaMarcas = new ArrayList<>();
 
