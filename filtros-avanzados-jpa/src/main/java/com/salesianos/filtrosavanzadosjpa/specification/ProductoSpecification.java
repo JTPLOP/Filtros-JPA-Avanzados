@@ -47,7 +47,9 @@ public class ProductoSpecification {
             }*/
 
             // Combina todos los predicados activos mediante un AND lógico
-            return builder.and(predicates.toArray(new Predicate[0]));
+            return builder.and();
+
+            //return builder.and(predicates.toArray(new Predicate[0])); -> llamada, por cambiar el predicado
         };
     }
 

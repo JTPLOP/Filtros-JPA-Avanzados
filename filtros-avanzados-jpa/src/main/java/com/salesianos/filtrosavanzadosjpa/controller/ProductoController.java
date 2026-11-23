@@ -43,7 +43,7 @@ public class ProductoController {
     public ResponseEntity<Page<ProductoFilterDTO>> filtrarProductos(
             @Valid @RequestBody ProductoFilterDTO filtro,
             @PageableDefault(size=10, sort="nombre") Pageable pageable ){
-        return ResponseEntity.ok(productoService.buscarProductosFiltro(filtro, pageable);
+        return ResponseEntity.ok(productoService.buscarProductosFiltro(filtro, pageable));
     }
 
 
