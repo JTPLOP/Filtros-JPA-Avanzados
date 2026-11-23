@@ -11,7 +11,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ProductoService {
 
-    private final ProductRepository productRepository;s
+    private final ProductRepository productRepository;
 
     public List<Producto> findAll() {
 
@@ -24,7 +24,8 @@ public class ProductoService {
 
     public List<Producto> findByFilter() {
 
-        return
+        // to change
+        return List.of();
     }
 
 
